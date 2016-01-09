@@ -1,0 +1,70 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'distribution'
+	
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+	
+repositories {
+	mavenCentral()
+}
+
+eclipse {
+	project {
+		natures('org.springsource.ide.eclipse.gradle.core.nature')
+	}
+}
+
+tasks.eclipse.doLast {
+	copy {
+		from('../eclipse-settings')
+		into('.settings')
+	}
+}
+
+tasks.cleanEclipse.doLast {
+	delete('.settings')
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.5'
+}
+
+dependencies {
+	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12')
+	compile(group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.3')
+	compile(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.3')
+	compile(group: 'org.scream3r', name: 'jssc', version: '2.8.0')
+	compile(group: 'com.fifesoft', name: 'rsyntaxtextarea', version: '2.5.8')
+	compile(group: 'com.fifesoft', name: 'autocomplete', version: '2.5.8')
+	compile(group: 'org.jdesktop', name: 'beansbinding', version: '1.2.1')
+}
+
+def generalManifest = manifest {
+	attributes('Built-By': System.getProperty('user.name'),
+			'Implementation-URL': 'https://github.com/UnAfraid/ESPlorer',
+			'Main-Class': 'com.github.unafraid.ESPlorer.Main')
+}
+
+
+jar {
+	from {
+		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+	manifest {
+		from(generalManifest)
+	}
+}
+
+distributions {
+	main {
+		contents {
+			from('dist')
+			from(jar)
+		}
+	}
+}

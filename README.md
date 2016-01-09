@@ -25,10 +25,6 @@ Code snippets
 Detailed logging
 and more, more more…
 
-###Required libraries for build
-[jSSC](https://code.google.com/p/java-simple-serial-connector/)
-[rSyntaxTextArea](http://fifesoft.com/rsyntaxtextarea/)
-
 ###Discuss
 [English esp8266.com](http://www.esp8266.com/viewtopic.php?f=22&t=882)
 [Russian esp8266.ru](http://esp8266.ru/forum/threads/esplorer.34/)
