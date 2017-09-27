@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="windows-1251" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045495</millis>
+  <sequence>5</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Load saved settings: Firmware:NodeMCU</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045503</millis>
+  <sequence>6</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Snippets: loading...</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045538</millis>
+  <sequence>7</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Snippets load: Success.</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045625</millis>
+  <sequence>8</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Set new color theme: Success.</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045629</millis>
+  <sequence>9</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Load saved settings: DONE.</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045631</millis>
+  <sequence>10</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Snippets: loading...</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045633</millis>
+  <sequence>11</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Snippets load: Success.</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045962</millis>
+  <sequence>12</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Scan system...</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045968</millis>
+  <sequence>13</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>found last saved serial port COM1</message>
+</record>
+<record>
+  <date>2017-09-27T17:20:45</date>
+  <millis>1506522045970</millis>
+  <sequence>14</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Scan done.</message>
+</record>
+<record>
+  <date>2017-09-27T17:21:07</date>
+  <millis>1506522067101</millis>
+  <sequence>15</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>FileTab cleared: Success.</message>
+</record>
+<record>
+  <date>2017-09-27T17:21:07</date>
+  <millis>1506522067101</millis>
+  <sequence>16</sequence>
+  <logger>com.github.unafraid.ESPlorer.Main</logger>
+  <level>INFO</level>
+  <class>com.github.unafraid.ESPlorer.Main</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>File close: Success.</message>
+</record>
+</log>

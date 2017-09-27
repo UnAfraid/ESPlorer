@@ -1,9 +1,16 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'distribution'
+plugins {
+  id "edu.sc.seis.launch4j" version "2.4.1"
+  id "de.sebastianboegl.shadow.transformer.log4j" version "2.1.1"
+  id "com.github.johnrengelman.shadow" version "2.0.1"
+}
+
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "edu.sc.seis.launch4j"
+apply plugin: "de.sebastianboegl.shadow.transformer.log4j"
 	
-sourceCompatibility = '1.7'
-targetCompatibility = '1.7'
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
 	
 repositories {
 	mavenCentral()
@@ -11,60 +18,56 @@ repositories {
 
 eclipse {
 	project {
-		natures('org.springsource.ide.eclipse.gradle.core.nature')
+		natures("org.springsource.ide.eclipse.gradle.core.nature")
 	}
 }
 
 tasks.eclipse.doLast {
 	copy {
-		from('../eclipse-settings')
-		into('.settings')
+		from("../eclipse-settings")
+		into(".settings")
 	}
 }
 
 tasks.cleanEclipse.doLast {
-	delete('.settings')
+	delete(".settings")
 }
 
 tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
+	options.encoding = "UTF-8"
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '2.5'
+	gradleVersion = "4.2"
 }
 
 dependencies {
-	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12')
-	compile(group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.3')
-	compile(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.3')
-	compile(group: 'org.scream3r', name: 'jssc', version: '2.8.0')
-	compile(group: 'com.fifesoft', name: 'rsyntaxtextarea', version: '2.5.8')
-	compile(group: 'com.fifesoft', name: 'autocomplete', version: '2.5.8')
-	compile(group: 'org.jdesktop', name: 'beansbinding', version: '1.2.1')
+	compile(group: "org.slf4j", name: "slf4j-api", version: "1.7.25")
+	runtime(group: "org.apache.logging.log4j", name: "log4j-slf4j-impl", version: "2.9.1")
+	runtime(group: "org.apache.logging.log4j", name: "log4j-core", version: "2.9.1")
+	compile(group: "org.scream3r", name: "jssc", version: "2.8.0")
+	compile(group: "com.fifesoft", name: "rsyntaxtextarea", version: "2.5.8")
+	compile(group: "com.fifesoft", name: "autocomplete", version: "2.5.8")
+	compile(group: "org.jdesktop", name: "beansbinding", version: "1.2.1")
 }
 
 def generalManifest = manifest {
-	attributes('Built-By': System.getProperty('user.name'),
-			'Implementation-URL': 'https://github.com/UnAfraid/ESPlorer',
-			'Main-Class': 'com.github.unafraid.ESPlorer.Main')
+	attributes("Built-By": System.getProperty("user.name"),
+			"Implementation-URL": "https://github.com/UnAfraid/ESPlorer",
+			"Main-Class": "com.github.unafraid.ESPlorer.Main")
 }
 
 
 jar {
-	from {
-		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-	}
 	manifest {
 		from(generalManifest)
 	}
 }
 
-distributions {
-	main {
-		contents {
-			from('dist')
-			from(jar)
-		}
-	}
+launch4j {
+    copyConfigurable = project.tasks.shadowJar.outputs.files
+    jar = "lib/${project.tasks.shadowJar.archiveName}"
+    mainClassName = "com.github.unafraid.ESPlorer.Main"
+    icon = project.projectDir.getAbsolutePath() + "/launch4j/app.ico"
+    manifest = project.projectDir.getAbsolutePath() + "/launch4j/app.exe.manifest"
 }
